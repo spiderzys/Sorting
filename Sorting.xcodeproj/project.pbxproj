@@ -12,7 +12,19 @@
 		695F17B91CFA755000A49ECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695F17B71CFA755000A49ECE /* Main.storyboard */; };
 		695F17BB1CFA755000A49ECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 695F17BA1CFA755000A49ECE /* Assets.xcassets */; };
 		695F17BE1CFA755000A49ECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695F17BC1CFA755000A49ECE /* LaunchScreen.storyboard */; };
+		69714E351CFBCD1F00B6CA5E /* SortingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69714E341CFBCD1F00B6CA5E /* SortingTests.swift */; };
+		69714E3C1CFBCEE900B6CA5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F17B51CFA755000A49ECE /* ViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		69714E371CFBCD1F00B6CA5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 695F17A81CFA754F00A49ECE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 695F17AF1CFA755000A49ECE;
+			remoteInfo = Sorting;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		695F17B01CFA755000A49ECE /* Sorting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sorting.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +34,20 @@
 		695F17BA1CFA755000A49ECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		695F17BD1CFA755000A49ECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		695F17BF1CFA755000A49ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69714E321CFBCD1F00B6CA5E /* SortingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SortingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69714E341CFBCD1F00B6CA5E /* SortingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingTests.swift; sourceTree = "<group>"; };
+		69714E361CFBCD1F00B6CA5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		695F17AD1CFA755000A49ECE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69714E2F1CFBCD1F00B6CA5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				695F17B21CFA755000A49ECE /* Sorting */,
+				69714E331CFBCD1F00B6CA5E /* SortingTests */,
 				695F17B11CFA755000A49ECE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				695F17B01CFA755000A49ECE /* Sorting.app */,
+				69714E321CFBCD1F00B6CA5E /* SortingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +86,15 @@
 				695F17BF1CFA755000A49ECE /* Info.plist */,
 			);
 			path = Sorting;
+			sourceTree = "<group>";
+		};
+		69714E331CFBCD1F00B6CA5E /* SortingTests */ = {
+			isa = PBXGroup;
+			children = (
+				69714E341CFBCD1F00B6CA5E /* SortingTests.swift */,
+				69714E361CFBCD1F00B6CA5E /* Info.plist */,
+			);
+			path = SortingTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +117,24 @@
 			productReference = 695F17B01CFA755000A49ECE /* Sorting.app */;
 			productType = "com.apple.product-type.application";
 		};
+		69714E311CFBCD1F00B6CA5E /* SortingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69714E3B1CFBCD1F00B6CA5E /* Build configuration list for PBXNativeTarget "SortingTests" */;
+			buildPhases = (
+				69714E2E1CFBCD1F00B6CA5E /* Sources */,
+				69714E2F1CFBCD1F00B6CA5E /* Frameworks */,
+				69714E301CFBCD1F00B6CA5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69714E381CFBCD1F00B6CA5E /* PBXTargetDependency */,
+			);
+			name = SortingTests;
+			productName = SortingTests;
+			productReference = 69714E321CFBCD1F00B6CA5E /* SortingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +147,10 @@
 				TargetAttributes = {
 					695F17AF1CFA755000A49ECE = {
 						CreatedOnToolsVersion = 7.3.1;
+					};
+					69714E311CFBCD1F00B6CA5E = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 695F17AF1CFA755000A49ECE;
 					};
 				};
 			};
@@ -113,6 +168,7 @@
 			projectRoot = "";
 			targets = (
 				695F17AF1CFA755000A49ECE /* Sorting */,
+				69714E311CFBCD1F00B6CA5E /* SortingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +184,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69714E301CFBCD1F00B6CA5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,7 +203,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69714E2E1CFBCD1F00B6CA5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69714E3C1CFBCEE900B6CA5E /* ViewController.swift in Sources */,
+				69714E351CFBCD1F00B6CA5E /* SortingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		69714E381CFBCD1F00B6CA5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 695F17AF1CFA755000A49ECE /* Sorting */;
+			targetProxy = 69714E371CFBCD1F00B6CA5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		695F17B71CFA755000A49ECE /* Main.storyboard */ = {
@@ -269,6 +349,30 @@
 			};
 			name = Release;
 		};
+		69714E391CFBCD1F00B6CA5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SortingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zys.SortingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sorting.app/Sorting";
+			};
+			name = Debug;
+		};
+		69714E3A1CFBCD1F00B6CA5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SortingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zys.SortingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sorting.app/Sorting";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -286,6 +390,15 @@
 			buildConfigurations = (
 				695F17C31CFA755000A49ECE /* Debug */,
 				695F17C41CFA755000A49ECE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69714E3B1CFBCD1F00B6CA5E /* Build configuration list for PBXNativeTarget "SortingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69714E391CFBCD1F00B6CA5E /* Debug */,
+				69714E3A1CFBCD1F00B6CA5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
