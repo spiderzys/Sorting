@@ -20,6 +20,9 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIV-oy-JdD">
                                 <rect key="frame" x="20" y="70" width="560" height="35"/>
+                                <accessibility key="accessibilityConfiguration" label="aaa">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Yhc-Ls-DmJ"/>
                                 </constraints>

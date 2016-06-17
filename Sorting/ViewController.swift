@@ -19,12 +19,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
+      //  _ = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector(repeatTask()), userInfo: nil, repeats: false)
+        print(NSThread.currentThread().description)
+     //   let thread = NSThread.init(target: self, selector: #selector(repeatTask), object: nil)
+     //   thread.start()
+        
+            // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func repeatTask()  {
+        print(NSThread.currentThread().description)
+        unsortedTextField.text = ""
     }
     
     @IBAction func sort(sender: AnyObject) {
