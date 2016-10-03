@@ -33,9 +33,9 @@ class SortingUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let app = XCUIApplication()
-        let sortElementsQuery = app.otherElements.containingType(.Button, identifier:"sort")
-        sortElementsQuery.childrenMatchingType(.TextField).element.tap()
-        sortElementsQuery.childrenMatchingType(.TextField).element
+        let sortElementsQuery = app.otherElements.containing(.button, identifier:"sort")
+        sortElementsQuery.children(matching: .textField).element.tap()
+        sortElementsQuery.children(matching: .textField).element
         app.buttons["sort"].tap()
     }
     

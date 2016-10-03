@@ -23,18 +23,18 @@ class SortingTests: XCTestCase {
         super.tearDown()
     }
     
-    func testSort(array:[Int]){
+    func testSort(_ array:[Int]){
         viewController.array = array
         viewController.mergeSort(0, right: viewController.array!.count-1)
-        XCTAssertEqual(viewController.array!, array.sort())
+        XCTAssertEqual(viewController.array!, array.sorted())
         
         viewController.array = array
         viewController.quickSort(0, right: viewController.array!.count-1)
-        XCTAssertEqual(viewController.array!, array.sort())
+        XCTAssertEqual(viewController.array!, array.sorted())
         
         viewController.array = array
         viewController.heapSort()
-        XCTAssertEqual(viewController.array!, array.sort())
+        XCTAssertEqual(viewController.array!, array.sorted())
     }
     
     func testExample(){

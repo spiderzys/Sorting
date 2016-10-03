@@ -7,6 +7,26 @@
 //
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class ViewController: UIViewController {
     
@@ -18,9 +38,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        var s1 = "123"
+                
       //  _ = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector(repeatTask()), userInfo: nil, repeats: false)
-        print(NSThread.currentThread().description)
+        print(Thread.current.description)
      //   let thread = NSThread.init(target: self, selector: #selector(repeatTask), object: nil)
      //   thread.start()
         
@@ -32,13 +53,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     func repeatTask()  {
-        print(NSThread.currentThread().description)
+        print(Thread.current.description)
         unsortedTextField.text = ""
     }
     
-    @IBAction func sort(sender: AnyObject) {
+    @IBAction func sort(_ sender: AnyObject) {
         if(unsortedTextField.text?.characters.count>0){
-            let stringArray = unsortedTextField.text?.componentsSeparatedByString(" ")
+            let stringArray = unsortedTextField.text?.components(separatedBy: " ")
             
             array = stringArray!.map{Int($0)!}
             
@@ -62,7 +83,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func quickSort(left:Int, right:Int) {
+    func quickSort(_ left:Int, right:Int) {
         
         var a = left
         var b = right
@@ -89,7 +110,7 @@ class ViewController: UIViewController {
             array![a] = key
         }
         
-        resultString = resultString.stringByAppendingFormat("%@\n", (array?.description)!)
+        resultString = resultString.appendingFormat("%@\n", (array?.description)!)
         
         if a>left {
             quickSort(left, right: a-1)
@@ -102,7 +123,7 @@ class ViewController: UIViewController {
     }
     
     
-    func mergeSort(left:Int, right:Int) {
+    func mergeSort(_ left:Int, right:Int) {
         if(right>left){
             
             mergeSort(left, right: (left+right)/2)
@@ -111,7 +132,7 @@ class ViewController: UIViewController {
             var a2 = (left+right)/2+1
             let b1 = (left+right)/2
             let b2 = right
-            var temp = Array.init(count: right-left+1, repeatedValue: 0)
+            var temp = Array.init(repeating: 0, count: right-left+1)
             for index in 0...right-left {
                 
                 if (a1 > b1){
@@ -140,7 +161,7 @@ class ViewController: UIViewController {
                 array![index+left] = temp[index]
                 
             }
-            resultString = resultString.stringByAppendingFormat("%@\n", (array?.description)!)
+            resultString = resultString.appendingFormat("%@\n", (array?.description)!)
         }
     }
     
@@ -149,19 +170,19 @@ class ViewController: UIViewController {
         for i in 0...array!.count-1 {
             heapAdjust(array!.count-1-i,range: array!.count-1)
         }
-        resultString = resultString.stringByAppendingFormat("%@\n", (array?.description)!)
+        resultString = resultString.appendingFormat("%@\n", (array?.description)!)
         
         for i in 0..<array!.count-1 {
             let range = array!.count-1-i-1
             exchange(0, j:range+1)
-            resultString = resultString.stringByAppendingFormat("%@\n", (array?.description)!)
+            resultString = resultString.appendingFormat("%@\n", (array?.description)!)
             heapAdjust(0,range: range)
           //  resultString = resultString.stringByAppendingFormat("%@\n", (array?.description)!)
         }
     }
 
     
-    func  heapAdjust(i:Int,range:Int)  {
+    func  heapAdjust(_ i:Int,range:Int)  {
         if(2*i+2 <= range){
             if (array![2*i+1]>=array![2*i+2]) && (array![2*i+1]>=array![i]) {
                 
@@ -183,7 +204,7 @@ class ViewController: UIViewController {
         
     }
     
-    func exchange(i:Int,j:Int){
+    func exchange(_ i:Int,j:Int){
         let temp = array![j]
         array![j] = array![i]
         array![i] = temp
